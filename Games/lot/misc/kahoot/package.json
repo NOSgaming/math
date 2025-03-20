@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^10.2.1",
+    "prompt-sync": "^4.2.0",
+    "puppeteer": "^23.8.0",
+    "puppeteer-core": "^23.8.0"
+  }
+}

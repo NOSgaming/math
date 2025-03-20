@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Games</title>
+
+        <!-- External Style and Script Links -->
+        <link rel="stylesheet" href="style.css" />
+        <script src="soundeffects.js"></script>
+        <script src="generategames.js"></script>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="Images/Favcon.ico" />
+
+        <style>
+            /* Custom Background */
+            body {
+                background-image: url("Images/1513882457293.webp"); /* Replace with your image path */
+                background-size: cover; /* Ensures image covers the entire viewport */
+                background-position: center; /* Keeps the image centered */
+                background-repeat: no-repeat; /* Prevents the image from repeating */
+                font-family: Arial, sans-serif; /* Default font */
+                margin: 0;
+                padding: 0;
+                min-height: 100vh; /* Ensures the background covers full viewport height */
+            }
+
+            /* Navigation Bar Styling */
+            #nav {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .navbutton {
+                padding: 10px 20px;
+                background-color: rgba(
+                    0,
+                    0,
+                    0,
+                    0.7
+                ); /* Dark background for contrast */
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+
+            .navbutton:hover {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+
+            /* Game Buttons Styling */
+            .gamebutton {
+                background-color: rgb(237, 237, 237);
+                width: 200px;
+                height: 50px;
+                border: 2px solid black; /* Added border */
+                border-radius: 25px;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 14px;
+                font-weight: bold;
+                transition: all 0.2s;
+                margin-top: 10px;
+            }
+
+            .gamebutton:hover {
+                background-color: #f0f0f0;
+            }
+
+            /* Padding and spacing for the games section */
+            #gamesdiv {
+                text-align: center;
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="nav">
+            <button
+                onclick="window.location.href='index.html'"
+                class="navbutton"
+            >
+                <b>Home</b>
+            </button>
+            <button
+                onclick="window.location.href='https://c13f1074-f069-4cca-97bb-8832935ca17a-00-tzah7xwszalh.kirk.replit.dev/'"
+                class="navbutton"
+            >
+                <b>Proxy</b>
+            </button>
+            <button
+                onclick="window.location.href='game.html'"
+                class="navbutton"
+            >
+                <b>Games</b>
+            </button>
+            <button
+                onclick="window.open('https://discord.gg/fXeQxAGUh4','popup','width=600,height=600')"
+                class="navbutton"
+            >
+                <b>Discord</b>
+            </button>
+        </div>
+
+        <br /><br /><br /><br /><br /><br />
+
+        <!-- Game buttons -->
+        <button onclick="redirectToEaglercraft18()" class="gamebutton">
+            <b>Eaglercraft 1.8</b>
+        </button>
+        <button onclick="redirectToEaglercraft152()" class="gamebutton">
+            <b>Eaglercraft 1.5.2</b>
+        </button>
+        <button onclick="redirectToeagclient()" class="gamebutton">
+            <b>DragonX 1.8(Hacks)</b>
+        </button>
+        <button onclick="redirectToeagforge()" class="gamebutton">
+            <b>Eaglercraft 1.8 Forge</b>
+        </button>
+        <button onclick="redirectTo1v1lol()" class="gamebutton">
+            <b>1v1.lol(Old)</b>
+        </button>
+        <button onclick="redirectToovo()" class="gamebutton">
+            <b>OvO</b>
+        </button>
+        <button onclick="redirectToway()" class="gamebutton">
+            <b>Subway Surfers</b>
+        </button>
+        <button onclick="redirectTosound()" class="gamebutton">
+            <b>Soundboard</b>
+        </button>
+        <button onclick="redirectToopen()" class="gamebutton">
+            <b>New Proxy(Not Working)</b>
+        </button>
+        <button onclick="redirectTocpm()" class="gamebutton">
+            <b>Cpm(It is)</b>
+        </button>
+        <button onclick="redirectTojim()" class="gamebutton">
+            <b>Jim Breuer</b>
+        </button>
+
+        <div id="gamesdiv">
+            <!-- Any additional content for games can go here -->
+        </div>
+
+        <!-- JavaScript Functions -->
+        <script>
+            function redirectToEaglercraft18() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/eag18.html",
+                    "_blank",
+                );
+            }
+
+            function redirectToEaglercraft152() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/eag15.html",
+                    "_blank",
+                );
+            }
+
+            function redirectTo1v1lol() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/1v1/index.html",
+                    "_blank",
+                );
+            }
+
+            function redirectToovo() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/ovo2/index.html",
+                    "_blank",
+                );
+            }
+
+            function redirectToway() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/sub.html",
+                    "_blank",
+                );
+            }
+
+            function redirectTosound() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/lot/misc/misc/soundboard/index.html",
+                    "_blank",
+                );
+            }
+            function redirectToeagclient() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/heag.html",
+                    "_blank",
+                );
+            }
+
+            function redirectToopen() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/eag188.html",
+                    "_blank",
+                );
+            }
+            function redirectTocpm() {
+                window.open(
+                    "https://my.cpm.org/learningPortal/default",
+                    "_blank",
+                );
+            }
+            function redirectTojim() {
+                window.open(
+                    "https://sites.google.com/mail.cadott.k12.wi.us/jim-breuer/home",
+                    "_blank",
+                );
+            }
+            function redirectToeagforge() {
+                window.open(
+                    "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Games/eagforg.html",
+                    "_blank",
+                );
+            }
+        </script>
+    </body>
+</html>

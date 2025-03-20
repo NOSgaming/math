@@ -1,6 +1,6 @@
 entrypoint="index.html"
 hidden=[".config"]
-modules = ["python-3.11", "web:v2-20230623-0b7a606"]
+modules = ["nodejs-20", "python-3.11", "web:v2-20230623-0b7a606"]
 
 [nix]
 channel = "stable-23_11"
@@ -10,5 +10,18 @@ publicDir = "/"
 deploymentTarget = "static"
 
 [[ports]]
+localPort = 3000
+externalPort = 3000
+
+[[ports]]
 localPort = 8000
-externalPort = 8000
+externalPort = 80
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
+exposeLocalhost = true
+
+[[ports]]
+localPort = 8081
+externalPort = 8081

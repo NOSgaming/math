@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>OvO 2.0.2</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <meta name="generator" content="Construct 3" />
+    <link rel="manifest" href="appmanifest.json" />
+    <link rel="apple-touch-icon" href="../../icons/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="../../icons/icon-512x512.png" />
+    <link rel="icon" href="../../icons/icon-512x512.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script async src="//www.googletagmanager.com/gtag/js"></script>
+    <script src="../../analytics.js"></script>
+  </head>
+
+  <body>
+    <div id="fb-root"></div>
+    <noscript>
+      <div id="notSupportedWrap">
+        <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+        <p class="notSupportedMessage">
+          JavaScript appears to be disabled. Please enable it to view this
+          content.
+        </p>
+        <p class="notSupportedMessage">
+          This content was developed in Construct 3.
+          <a href="https://www.construct.net/en">Create games online</a>
+        </p>
+      </div>
+    </noscript>
+    <script src="scripts/supportcheck.js"></script>
+    <script src="scripts/offlineclient.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/register-sw.js"></script>
+
+    <script
+      src="../../modloader/newmodloaderv2.js"
+      id="modloader"
+      defer
+    ></script>
+
+    <!-- Auto-save script for the game -->
+    <script>
+      // Auto-save functionality for the game
+
+      // Save file path: Using localStorage for simplicity in a web environment
+      const SAVE_KEY = "player_level";
+
+      // Function to load the saved level from localStorage
+      function loadProgress() {
+        const savedLevel = localStorage.getItem(SAVE_KEY);
+        return savedLevel ? parseInt(savedLevel) : 1; // Default to level 1 if no save exists
+      }
+
+      // Function to save the current level to localStorage
+      function saveProgress(level) {
+        localStorage.setItem(SAVE_KEY, level);
+        console.log("Progress saved: Level " + level);
+      }
+
+      // Simulate progression and auto-save
+      let currentLevel = loadProgress();
+
+      // Function to update level and save periodically
+      function updateProgress() {
+        // Example: Simulate level progression (you would modify this based on the game's logic)
+        currentLevel++; // Assuming level increases over time or through gameplay events
+
+        // Automatically save progress every 10 seconds (you can adjust this)
+        saveProgress(currentLevel);
+
+        console.log(`Current Level: ${currentLevel}`);
+      }
+
+      // Start periodic saving (every 10 seconds)
+      setInterval(updateProgress, 10000); // Save every 10 seconds
+    </script>
+  </body>
+</html>

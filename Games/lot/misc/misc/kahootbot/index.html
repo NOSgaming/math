@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahoot Bot Flooder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #00bfff;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #00bfff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #008c9e;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Kahoot Bot Flooder</h1>
+
+<div class="form-container">
+    <label for="pin">Enter Game Pin:</label>
+    <input type="text" id="pin" placeholder="Enter Kahoot Game Pin" required>
+
+    <label for="bots">Enter Number of Bots:</label>
+    <input type="number" id="bots" placeholder="Number of Bots" required>
+
+    <label for="name">Enter Bot Name (Optional):</label>
+    <input type="text" id="name" placeholder="Enter Bot Name" required>
+
+    <button id="startBtn">Start Flooding</button>
+</div>
+
+<script>
+    document.getElementById("startBtn").addEventListener("click", function() {
+        const pin = document.getElementById("pin").value;
+        const bots = document.getElementById("bots").value;
+        const name = document.getElementById("name").value;
+
+        if (pin && bots && name) {
+            alert("Starting the bot flood...");
+            
+            // Call your backend script here or trigger an action
+            // For example, make an HTTP request to a server endpoint that will run your Node.js code
+            // Example with fetch (assuming you have a backend API that runs the flooder):
+            // fetch("/start-flooding", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify({ pin, bots, name })
+            // })
+            // .then(response => response.json())
+            // .then(data => console.log(data))
+            // .catch(error => console.error("Error:", error));
+        } else {
+            alert("Please fill out all fields.");
+        }
+    });
+</script>
+
+</body>
+</html>
