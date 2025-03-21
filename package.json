@@ -2,8 +2,13 @@
   "dependencies": {
     "an-array-of-english-words": "^2.0.0",
     "aws-ssl-profiles": "^1.1.2",
+    "bcrypt": "^5.1.1",
     "beepbeep": "^1.3.0",
+    "body-parser": "^1.20.3",
     "console-title": "^1.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
     "kahoot.js": "^1.0.0",
     "kahoot.js-updated": "^3.404.1",
     "random-name": "^0.1.2",

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Login</title>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet"
+      />
+      <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+         }
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url("https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/Images/inwt.png")
+               no-repeat center center/cover;
+         }
+         .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            color: white;
+         }
+         .main {
+            position: relative;
+            margin: 1rem 0;
+         }
+         .main input {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            outline: none;
+            color: #fff;
+         }
+         input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+            color: #000;
+         }
+         .signup {
+            margin-top: 10px;
+         }
+         .signup a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+         }
+      </style>
+      <script>
+         async function loginUser(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (!username || !password) {
+               alert("Please enter both username and password.");
+               return;
+            }
+
+            try {
+               const response = await fetch("/login", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ username, password }),
+               });
+
+               if (!response.ok) {
+                  const errorData = await response.json();
+                  throw new Error(
+                     errorData.message ||
+                        `HTTP error! status: ${response.status}`,
+                  );
+               }
+
+               const result = await response.json();
+               if (result.success) {
+                  window.location.href = "https://ifykyk.nosgaming.fun";
+               } else {
+                  alert(result.message);
+               }
+            } catch (error) {
+               console.error("Login error:", error.message);
+               alert(error.message || "Something went wrong.");
+            }
+         }
+
+         async function signupUser(event) {
+            event.preventDefault();
+
+            const username = document.querySelector("#new-username").value;
+            const password = document.querySelector("#new-password").value;
+
+            if (!username || !password) {
+               alert("Please enter both username and password.");
+               return;
+            }
+
+            try {
+               const response = await fetch(
+                  "https://13e9cfa6-3aa0-4705-9482-c79c09826539-00-16n9v7e2tjupj.spock.replit.dev/signup",
+                  {
+                     method: "POST",
+                     headers: { "Content-Type": "application/json" },
+                     body: JSON.stringify({ username, password }),
+                  },
+               );
+
+               if (!response.ok) {
+                  // Attempt to parse error from JSON response
+                  const errorData = await response.json();
+                  throw new Error(
+                     errorData.message ||
+                        `HTTP error! status: ${response.status}`,
+                  );
+               }
+
+               const data = await response.json();
+               alert(data.message || "Signup successful!");
+            } catch (error) {
+               console.error("Signup error:", error.message);
+               alert(error.message || "Something went wrong during signup.");
+            }
+         }
+      </script>
+   </head>
+   <body>
+      <div class="container">
+         <h1>Log in</h1>
+         <form onsubmit="loginUser(event)">
+            <div class="main">
+               <input
+                  type="text"
+                  id="username"
+                  required
+                  placeholder="Username"
+               />
+            </div>
+            <div class="main">
+               <input
+                  type="password"
+                  id="password"
+                  required
+                  placeholder="Password"
+               />
+            </div>
+            <input type="submit" value="Log In" />
+         </form>
+         <div class="signup">
+            <h3>Sign Up</h3>
+            <form onsubmit="signupUser(event)">
+               <div class="main">
+                  <input
+                     type="text"
+                     id="new-username"
+                     required
+                     placeholder="New Username"
+                  />
+               </div>
+               <div class="main">
+                  <input
+                     type="password"
+                     id="new-password"
+                     required
+                     placeholder="New Password"
+                  />
+               </div>
+               <input type="submit" value="Sign Up" />
+            </form>
+         </div>
+      </div>
+   </body>
+</html>
